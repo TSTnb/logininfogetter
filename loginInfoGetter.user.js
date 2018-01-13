@@ -28,7 +28,7 @@ function haveFlashVars(responseText, flashVars)
     flashVars.sessionId = rawFlashVars.match(/sessionId.*?:.*?encodeURIComponent\('(.*?)'\)/)[1];
     flashVars.sessionToken = rawFlashVars.match(/sessionToken.*?:.*?encodeURIComponent\('(.*?)'\)/)[1];
     flashVars.timestamp = rawFlashVars.match(/timestamp.*?:.*?(\d+)/)[1];
-    document.body.appendChild(document.createElement('textArea')).textContent = 'sessionId: ' + flashVars.sessionId + "\nsessionToken: " + flashVars.sessionToken + "\ntimestamp: " + flashVars.timestamp;
+    document.body.appendChild(document.createElement('textArea')).textContent = flashVars.sessionId + "\n" + flashVars.sessionToken + "\n" + flashVars.timestamp;
 }
 
 buildFlashVarsParamString();
