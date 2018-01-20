@@ -5,7 +5,7 @@
 // @include http://*.tetrisfriends.com/games/*/game.php*
 // @grant none
 // @run-at document-end
-// @version 0.0.5
+// @version 0.0.6
 // @author morningpee
 // ==/UserScript==
 
