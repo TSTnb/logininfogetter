@@ -5,7 +5,7 @@
 // @include http://*.tetrisfriends.com/games/*/game.php*
 // @grant none
 // @run-at document-end
-// @version 0.0.8
+// @version 0.0.9
 // @author morningpee
 // ==/UserScript==
 
@@ -39,7 +39,7 @@ function haveFlashVars(responseText, flashVars)
     flashVars.sessionToken = rawFlashVars.match(/sessionToken.*?:.*?encodeURIComponent\('(.*?)'\)/)[1];
     flashVars.timestamp = rawFlashVars.match(/timestamp.*?:.*?(\d+)/)[1];
 
-    var urlParameters = ['das', 'ar'];
+    var urlParameters = ['das', 'ar', 'irs', 'ihs'];
     var tempParameter = '';
     for(i in urlParameters)
     {
