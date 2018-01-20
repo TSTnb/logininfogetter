@@ -28,6 +28,26 @@ function haveFlashVars(responseText, flashVars)
     flashVars.sessionId = rawFlashVars.match(/sessionId.*?:.*?encodeURIComponent\('(.*?)'\)/)[1];
     flashVars.sessionToken = rawFlashVars.match(/sessionToken.*?:.*?encodeURIComponent\('(.*?)'\)/)[1];
     flashVars.timestamp = rawFlashVars.match(/timestamp.*?:.*?(\d+)/)[1];
+
+    var urlParameters = ['das', 'ar'];
+    var tempParameter = '';
+    for(i in urlParameters)
+    {
+        var tempParameter = getParameter( urlParameters[i] );
+        if( tempParameter !== '' )
+            flashVars[ urlParameters[i] ] = tempParameter;
+
+    }
+
+    try{
+        flashVars.friendUserIds = rawFlashVars.match(/friendUserIds.*?'((\d+,)*\d*)'/)[1];
+        flashVars.blockedToByUserIds = rawFlashVars.match(/blockedToByUserIds.*?'((\d+,)*\d*)'/)[1];
+    }catch(err)
+    {
+        /* If this failed, the user is not logged in. */
+    }
+
+
     document.body.appendChild(document.createElement('textArea')).textContent = JSON.stringify(flashVars).replace(/,/g, ",\n").replace(/^{/g, "{\n").replace(/}$/g, "\n}");
 }
 
