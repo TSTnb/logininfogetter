@@ -5,7 +5,7 @@
 // @include http://*.tetrisfriends.com/games/*/game.php*
 // @grant none
 // @run-at document-end
-// @version 0.0.6
+// @version 0.0.7
 // @author morningpee
 // ==/UserScript==
 
@@ -58,7 +58,7 @@ function haveFlashVars(responseText, flashVars)
     }
 
 
-    document.body.appendChild(document.createElement('textArea')).textContent = JSON.stringify(flashVars).replace(/,/g, ",\n").replace(/^{/g, "{\n").replace(/}$/g, "\n}");
+    document.body.appendChild(document.createElement('textArea')).textContent = JSON.stringify(flashVars).replace(/","/g, "\",\"\n").replace(/^{/g, "{\n").replace(/}$/g, "\n}");
 }
 
 buildFlashVarsParamString();
