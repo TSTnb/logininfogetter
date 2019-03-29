@@ -2,10 +2,10 @@
 // @name Login Info Getter
 // @namespace logininfogetter
 // @description gets sessionId, sessionToken, and timestamp
-// @include http://*.tetrisfriends.com/games/*/game.php*
+// @include http*://*.tetrisfriends.com/games/*/game.php*
 // @grant none
 // @run-at document-end
-// @version 0.0.10
+// @version 0.0.11
 // @author morningpee
 // ==/UserScript==
 
